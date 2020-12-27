@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from main.views import HomeView, SignUpView, DashboardView, ProfileUpdateView, ProfileView
+from main.views import HomeView, SignUpView, DashboardView, ProfileUpdateView, ProfileView, LoginoptionView
 
 from django.contrib.auth import views as auth_views
  
@@ -9,6 +9,7 @@ urlpatterns = [
     #path('', include('main.urls')),
     #path('',views.homepage,name='home'),
     path('', HomeView.as_view(), name='home'),
+    path('login-option/', LoginoptionView.as_view(), name='login-option'),
     path('admin/', admin.site.urls),
     #path("register/", views.register, name="register"),
     path('accounts/', include('allauth.urls')),

@@ -34,6 +34,13 @@ from django.contrib import messages
 class HomeView(TemplateView):
     template_name = 'common/home.html'
 
+
+class LoginoptionView(TemplateView):
+    success_url = reverse_lazy('home')
+    template_name = 'common/login-option.html'
+
+
+
 class DashboardView(LoginRequiredMixin, TemplateView):
     template_name = 'common/dashboard.html'
     login_url = reverse_lazy('home')
@@ -61,6 +68,8 @@ from userprofile.models import Profile
 from django.contrib import messages
 
 from userprofile.models import Profile
+
+
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
